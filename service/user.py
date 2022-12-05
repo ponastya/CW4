@@ -1,4 +1,9 @@
+import hashlib
+import base64
+import hmac
+
 from dao.user import UserDAO
+from constants import PWD_HASH_SALT, PWD_HASH_ITERATIONS
 
 
 class UserService:
@@ -23,3 +28,13 @@ class UserService:
 
     def delete(self, rid):
         self.dao.delete(rid)
+
+    # Шаг 2.1. Добавьте методы генерации хеша пароля пользователя
+    def get_hash(self, password):
+        # base64.b16encode() - для конвертации в ascii
+        return base64.b16encode(hashlib.pbkdf2_hmac(
+            'sha256',
+            password.encode('utf-8'),  # Convert the password to bytes
+            PWD_HASH_SALT,
+            PWD_HASH_ITERATIONS
+        ))
