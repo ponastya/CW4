@@ -20,17 +20,19 @@ class UserService:
         return self.dao.get_by_username(username)
 
     def create(self, user_d):
+        user_d["password"] = self.make_password_hash(user_d.get("password"))
         return self.dao.create(user_d)
 
     def update(self, user_d):
         self.dao.update(user_d)
         return self.dao
 
-    def delete(self, rid):
-        self.dao.delete(rid)
+    def delete(self, user_d):
+        user_d["password"] = self.make_password_hash(user_d.get("password"))
+        self.dao.delete(user_d)
 
     # Шаг 2.1. Добавьте методы генерации хеша пароля пользователя
-    def get_hash(self, password):
+    def make_password_hash(self, password):
         # base64.b16encode() - для конвертации в ascii
         return base64.b16encode(hashlib.pbkdf2_hmac(
             JWT_ALGO,
