@@ -18,15 +18,15 @@ class AuthService:
         user = self.user_service.get_by_username(username)
 
         if user is None:
-            raise Exception
+            raise Exception()
 
         if not is_refresh:
             if not self.user_service.compare_passwords(user.password, password):
-                raise Exception
+                raise Exception()
 
         data = {
             "username": user.username,
-            "role": user.role
+            "role": user.role,
         }
 
         # 30 min access_token TTL (time to live)
@@ -41,18 +41,16 @@ class AuthService:
         data["exp"] = calendar.timegm(days130.timetuple())
         refresh_token = jwt.encode(data, JWT_SECRET, algorithm=JWT_ALGO)
 
-        tokens = {"access_token": access_token, "refresh_token": refresh_token}
-
-        return tokens
+        return {"access_token": access_token, "refresh_token": refresh_token}
 
     # PUT /auth — получает refresh_token из Body запроса в виде JSON, далее проверяет refresh_token
     # и если он не истек и валиден — генерит пару access_token и refresh_token и отдает их в виде JSON.
     def check_token(self, refresh_token):
-        data = jwt.decode(jwt=refresh_token, key=JWT_SECRET, algorithms=[JWT_ALGO])
+        data = jwt.decode(jwt=refresh_token, key=JWT_SECRET, algorithms=[JWT_ALGO, ])
         username = data.get("username")
         user = self.user_service.get_by_username(username)
 
         if user is None:
-            raise Exception
+            raise Exception()
 
         return self.generate_token(username, user.password, is_refresh=True)

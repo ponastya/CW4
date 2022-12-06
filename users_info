@@ -1,0 +1,21 @@
+{
+    "username": "vasya",
+    "role": "user",
+    "password": "1234567",
+    "id" : 1
+}
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhc3lhIiwicm9sZSI6InVzZXIiLCJleHAiOjE2NzAzMjU3MDV9.27-OhUj5BLq7_BTX0n2kgKML9VJxoPFexeHutkWPpik",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhc3lhIiwicm9sZSI6InVzZXIiLCJleHAiOjE2ODE1NTU5MDV9.Gs-14gpOz5omgTR4eBoV5ISoc9jnAkXaOQRFwby9Txk"
+}
+**************************************************************************************************
+{
+    "username": "vanya",
+    "role": "admin",
+    "password": "1234567",
+    "id" : 2
+}
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhbnlhIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjcwMzI1Njg1fQ.ilDc7xZUekEN1hyfT-P4OQJ2nWJFN2bp7O3Y5WDcF8s",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhbnlhIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxNTU1ODg1fQ.d5kQniLwELlzgjeZl0H4X1T5mfUKCZ0uS1gVPzdewO4"
+}

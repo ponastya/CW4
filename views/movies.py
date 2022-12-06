@@ -31,11 +31,11 @@ class MoviesView(Resource):
         return "", 201, {"location": f"/movies/{movie.id}"}
 
 
-@movie_ns.route('/<int:bid>')
+@movie_ns.route('/<int:rid>')
 class MovieView(Resource):
     @auth_required
-    def get(self, bid):
-        b = movie_service.get_one(bid)
+    def get(self, rid):
+        b = movie_service.get_one(rid)
         sm_d = MovieSchema().dump(b)
         return sm_d, 200
 

@@ -3,8 +3,8 @@ import base64
 import hmac
 
 from dao.user import UserDAO
-from constants import PWD_HASH_ITERATIONS
-from constants import JWT_ALGO, PWD_HASH_SALT
+from constants import PWD_HASH_ITERATIONS, PWD_HASH_ALGO
+from constants import PWD_HASH_SALT
 
 class UserService:
     def __init__(self, dao: UserDAO):
@@ -33,16 +33,16 @@ class UserService:
 
     # Шаг 2.1. Добавьте методы генерации хеша пароля пользователя
     def make_password_hash(self, password):
-        # base64.b16encode() - для конвертации в ascii
-        return base64.b16encode(hashlib.pbkdf2_hmac(
-            JWT_ALGO,
+        # base64.b64encode() - для конвертации в ascii
+        return base64.b64encode(hashlib.pbkdf2_hmac(
+            PWD_HASH_ALGO,
             password.encode('utf-8'),  # Convert the password to bytes
             PWD_HASH_SALT,
             PWD_HASH_ITERATIONS
         ))
 
     def compare_passwords(self, password_hash, request_password):
-        hmac.compare_digest(
-            base64.b16encode(password_hash),
-            hashlib.pbkdf2_hmac(JWT_ALGO, request_password.encode('utf-8'), PWD_HASH_SALT, PWD_HASH_ITERATIONS)
+        return hmac.compare_digest(
+            base64.b64decode(password_hash),
+            hashlib.pbkdf2_hmac(PWD_HASH_ALGO, request_password.encode('utf-8'), PWD_HASH_SALT, PWD_HASH_ITERATIONS)
         )

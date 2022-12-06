@@ -4,10 +4,10 @@ from flask_restx import Resource, Namespace
 from decorators import admin_required, auth_required
 from implemented import auth_service
 
-auth_ns = Namespace('auth')
+auth_ns = Namespace("auth")
 
 
-@auth_ns.route('/')
+@auth_ns.route("/")
 class AuthView(Resource):
     def post(self):
         req_json = request.json
@@ -15,7 +15,7 @@ class AuthView(Resource):
         password = req_json.get("password", None)
 
         if None in [username, password]:
-            return '', 401
+            return "", 401
 
         token = auth_service.generate_token(username, password)
         return token, 201
