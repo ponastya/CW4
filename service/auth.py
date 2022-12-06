@@ -31,8 +31,8 @@ class AuthService:
 
         # 30 min access_token TTL (time to live)
         # берем текущую дату utcnow() и прибавляем к ней 30 мин timedelta() - это будет время жизни токена
-        access_token_min30 = datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
-        data["exp"] = calendar.timegm(access_token_min30.timetuple())
+        access_token_min130 = datetime.datetime.utcnow() + datetime.timedelta(minutes=130)
+        data["exp"] = calendar.timegm(access_token_min130.timetuple())
         # кодирует информацию в токен, передаем данные, секретный код и алгоритм, по которому надо кодировать
         access_token = jwt.encode(data, JWT_SECRET, algorithm=JWT_ALGO)  # на выходе токен -- данные.данные.данные
 
