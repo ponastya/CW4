@@ -24,12 +24,12 @@ class UserService:
         return self.dao.create(user_d)
 
     def update(self, user_d):
+        user_d["password"] = self.make_password_hash(user_d.get("password"))
         self.dao.update(user_d)
         return self.dao
 
     def delete(self, user_d):
-        user_d["password"] = self.make_password_hash(user_d.get("password"))
-        self.dao.delete(user_d)
+       self.dao.delete(user_d)
 
     # Шаг 2.1. Добавьте методы генерации хеша пароля пользователя
     def make_password_hash(self, password):
