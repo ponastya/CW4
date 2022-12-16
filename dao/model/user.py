@@ -15,7 +15,7 @@ class User(db.Model):
 
 class UserSchema(Schema):
     id = fields.Int()
-    username = fields.Str()
+    email = fields.Str()
     password = fields.Str(load_only=True)
     name = fields.Str()
     surname = fields.Str()

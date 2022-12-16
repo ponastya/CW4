@@ -14,8 +14,8 @@ class AuthService:
     # POST /auth — получает логин и пароль из Body запроса в виде JSON,
     # далее проверяет соответствие с данными в БД (есть ли такой пользователь, такой ли у него пароль)
     # и если всё оk — генерит пару access_token и refresh_token и отдает их в виде JSON.
-    def generate_token(self, username, password, is_refresh=False):
-        user = self.user_service.get_by_username(username)
+    def generate_token(self, email, password, is_refresh=False):
+        user = self.user_service.get_by_email(email)
 
         if user is None:
             raise Exception()
@@ -25,8 +25,7 @@ class AuthService:
                 raise Exception()
 
         data = {
-            "username": user.email,
-            "name": user.name,
+            "email": user.email
         }
 
         # 30 min access_token TTL (time to live)
@@ -47,18 +46,18 @@ class AuthService:
     # и если он не истек и валиден — генерит пару access_token и refresh_token и отдает их в виде JSON.
     def check_token(self, refresh_token):
         data = jwt.decode(jwt=refresh_token, key=JWT_SECRET, algorithms=[JWT_ALGO, ])
-        username = data.get("username")
-        user = self.user_service.get_by_username(username)
+        useremail = data.get("email")
+        user = self.user_service.get_by_email(email=useremail)
 
         if user is None:
             raise Exception()
 
-        return self.generate_token(username, user.password, is_refresh=True)
+        return self.generate_token(useremail, user.password, is_refresh=True)
 
     def valid_token(self, access_token, refresh_token):
         for t in [access_token, refresh_token]:
             try:
                 jwt.decode(jwt=t, key=JWT_SECRET, algorithms=[JWT_ALGO])
             except Exception as e:
-                return True
-        return False
+                return False
+        return True

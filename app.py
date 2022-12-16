@@ -30,6 +30,9 @@ def register_extensions(app):
 app = create_app(Config())
 app.debug = True
 
+with app.app_context():
+    db.create_all()
+
 if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=10001, debug=True)
+    app.run(debug=True, host="127.0.0.1", port=10001)
 # flask run -h localhost -p 10001

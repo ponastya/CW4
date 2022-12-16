@@ -1,36 +1,26 @@
 {
-    "username": "vasya",
-    "role": "user",
     "password": "1234567",
-    "id" : 1
+    "email": "vasya@mail.ru",
+    "name": "vasya",
+    "surname": "first",
+    "favorite_genre": 1
 }
-{
-    "access_token":
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhc3lhIiwicm9sZSI6InVzZXIiLCJleHAiOjE2NzAzMjc2MTh9.gRmCUSMVinlEsX2LD_bw5LLAUxdcRZJzY6p905hLWZ0",
-    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhc3lhIiwicm9sZSI6InVzZXIiLCJleHAiOjE2ODE1NTc4MTh9.bbrGHKEOlC6CRIfl3zvzEmBgg6i4q7X8xQsKjeo0VZU"
-}
-
-
-
-**************************************************************************************************
-
 
 {
-    "username": "vanya",
-    "role": "admin",
-    "password": "1234567",
-    "id" : 2
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhc3lhQG1haWwucnUiLCJuYW1lIjpudWxsLCJleHAiOjE2NzExODIzMjN9.smYo-MBXxurxH0En-M7sjg1aRyrBZZt9pKrjGTb99Ks",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhc3lhQG1haWwucnUiLCJuYW1lIjpudWxsLCJleHAiOjE2ODI0MDY1MjN9.6p2-qqTxmQXzaELhcy23xtrPdy3j4YpnGW4JXMU9xr0"
+}
+
+{
+"email": "vasya234@mail.ru",
+"password": "1234567"
 }
 {
-    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhbnlhIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjcwMzI3NjQxfQ.-iNgtvGiXfud5W2NuV7aMCSzJWp8HleBNVciY8LQ014",
-    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhbnlhIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxNTU3ODQxfQ.C5brNYQC1rZQTiv6Ijy926NFtADOo42JPZNohhPAHSU"
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhc3lhMjM0QG1haWwucnUiLCJleHAiOjE2NzEyMDE1MDF9.HvpGvNqD3hqXxtmot2t84SodGyhgQrOEXXaDNvajJYs",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhc3lhMjM0QG1haWwucnUiLCJleHAiOjE2ODI0MjU3MDF9.ro9YedhBOAyh4zwlRLg91Rz68ZiSfImjg7isEuMUTnw"
 }
 
-
-******************************************************************************
-    {
-        "password": "1234567",
-        "role": "user",
-        "id": 3,
-        "username": "kostya"
-    }
+{
+    "email": "111vasya234@mail.ru",
+   "password": "1234567"
+}
