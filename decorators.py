@@ -31,7 +31,7 @@ def admin_required(func):
 
         try:
             user = jwt.decode(token, JWT_SECRET, algorithms=["HS256"])
-            role = user.get("role")
+            role = user.get("name")
             if role != "admin":
                 abort(403)
 

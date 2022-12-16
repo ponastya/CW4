@@ -25,3 +25,12 @@
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhbnlhIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjcwMzI3NjQxfQ.-iNgtvGiXfud5W2NuV7aMCSzJWp8HleBNVciY8LQ014",
     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhbnlhIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxNTU3ODQxfQ.C5brNYQC1rZQTiv6Ijy926NFtADOo42JPZNohhPAHSU"
 }
+
+
+******************************************************************************
+    {
+        "password": "1234567",
+        "role": "user",
+        "id": 3,
+        "username": "kostya"
+    }

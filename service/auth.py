@@ -25,8 +25,8 @@ class AuthService:
                 raise Exception()
 
         data = {
-            "username": user.username,
-            "role": user.role,
+            "username": user.email,
+            "name": user.name,
         }
 
         # 30 min access_token TTL (time to live)
