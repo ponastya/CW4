@@ -54,3 +54,11 @@ class AuthService:
             raise Exception()
 
         return self.generate_token(username, user.password, is_refresh=True)
+
+    def valid_token(self, access_token, refresh_token):
+        for t in [access_token, refresh_token]:
+            try:
+                jwt.decode(jwt=t, key=JWT_SECRET, algorithms=[JWT_ALGO])
+            except Exception as e:
+                return True
+        return False
